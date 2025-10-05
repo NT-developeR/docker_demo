@@ -1,7 +1,15 @@
 ---
-version: '3'
+version: '3.8'
 services:
     prep:
-      build: 
-  
+      build: ./prepare
+      dockerfile: Dockerfile
+      volumes:
+        -  '.app'
+    prod:
+      build: ./run
+      dockerfile: Dockerfile
+
+volumes:
+      shared_data:
 ... 
