@@ -1,1 +1,9 @@
 #build the image
+FROM maven:3.6.3-jdk-11
+RUN apt update \
+&& apt install git -y
+
+WORKDIR /output
+VOLUME /output
+RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git . \
+&& mvn package -DskipTests

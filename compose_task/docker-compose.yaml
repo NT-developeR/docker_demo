@@ -5,11 +5,18 @@ services:
       build: ./prepare
       dockerfile: Dockerfile
       volumes:
-        -  '.app'
+        -  shared_data:/output
+      restart: 'no'
     prod:
       build: ./run
       dockerfile: Dockerfile
+      volumes: 
+        - shared_data:/input
+      depends_on: 
+        - prep 
+      ports: 
+        -'8888:8080'
+      restart: unless-stopped
 
 volumes:
       shared_data:
-... 
