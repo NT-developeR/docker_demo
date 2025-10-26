@@ -2,13 +2,15 @@
 version: '3.8'
 services:
     prep:
-      build: ./prepare
+      build: 
+          context: ./prepare
           dockerfile: Dockerfile
       volumes:
         -  shared_data:/output
       restart: 'no'
     prod:
-      build: ./run
+      build: 
+          context: ./run
           dockerfile: Dockerfile
       volumes: 
         - shared_data:/input
