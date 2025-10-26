@@ -7,3 +7,4 @@ WORKDIR /output
 VOLUME /output
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git . \
 && mvn package -DskipTests
+RUN cp /output/target/*.war /output/

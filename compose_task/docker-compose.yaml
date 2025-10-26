@@ -15,7 +15,7 @@ services:
       depends_on: 
         - prep 
       ports: 
-        -'8888:8080'
+        - "8888:8080"
       restart: unless-stopped
 
 volumes:
