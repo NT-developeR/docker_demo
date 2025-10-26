@@ -6,5 +6,5 @@ RUN apt update \
 WORKDIR /output
 VOLUME /output
 RUN git clone https://github.com/boxfuse/boxfuse-sample-java-war-hello.git . \
-&& mvn package -DskipTests \
+&& mvn clean package -DskipTests \
 && cp target/*.war /output/
