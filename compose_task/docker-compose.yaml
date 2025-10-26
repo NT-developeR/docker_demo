@@ -3,13 +3,13 @@ version: '3.8'
 services:
     prep:
       build: ./prepare
-      dockerfile: Dockerfile
+          dockerfile: Dockerfile
       volumes:
         -  shared_data:/output
       restart: 'no'
     prod:
       build: ./run
-      dockerfile: Dockerfile
+          dockerfile: Dockerfile
       volumes: 
         - shared_data:/input
       depends_on: 
