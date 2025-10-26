@@ -1,5 +1,5 @@
 #build the image
-FROM maven:3.6.3-jdk-11
+FROM maven:3.9.6-eclipse-temurin-17
 RUN apt update \
 && apt install git -y
 
